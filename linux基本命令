@@ -1,0 +1,244 @@
+											基本命令
+
+文件操作
+	linux命令格式:
+		cmd [options] [para]
+	1.man手册
+		man 1 man
+		man 1 ls
+	2.linux文件系统结构的特点
+		一切皆文件
+		从/开始的
+	3.cd --->change directory
+		cd [dir]
+			dir默认是家目录
+			dir有效路径
+			路径：相对路径:相对当前, "."当前 ".."上一级
+			      绝对路径:从/开始
+	4.pwd 打印当前工作路径
+	5.目录的增删改查：
+		增:
+			touch [filepath]
+			vim [filepath]
+			gedit [filepath]
+
+			添加新目录
+				mkdir [dirpath]
+		查:
+			ls [options] [dirpath]
+				options:
+					-l
+					-i
+					-d
+					-a
+
+		删:
+			rm [options] [filepath]
+				options:
+					-r 如果删除的是目录，则加上此选项
+	6.文件的增删改查
+		增:
+			当用户成功登陆，默认打开三个文件(0标准输入，1标准输出， 2标准错误输出)
+			写文件方式:
+				通过编辑器(gedit, vim)
+				文件的重定向: > 标准输出重定向   2> 标准错误输出重定向  <标准输入重定向
+					ls > newfile
+				追加: >>
+		复制:
+			cp [options] [src_path][dest_path]
+				-r :目录
+		剪切
+			mv [src_path] [dest_path]
+		查看	
+			cat [filepath] 将文件的全部内容显示到终端
+			head -10 [filepath] 显示文件的前十行
+			tail -2 [filepath] 显示文件的最后2行
+			less [filepath] 按屏显示文件
+
+	7.文件的属性
+		ls -l
+		-rw-rw-r--. 1 reala_zhang reala_zhang 1378 7月   9 16:23 linux基本命令
+		文件类型:
+			七种：
+				-/regular	普通文件
+				d/directory	目录文件
+				l/link	符号连接
+				s/socket	套接字
+				b/block	块设备
+				p/pipe	管道
+				c/charactor	字符设备
+			
+		文件的权限：
+			user(拥有者) group(所属组) other(其他用户)
+			非目录文件:
+				r(read)w(write)x(execute)
+			目录文件:
+				r 检索      ls
+				w 增/删/改  cp touch mkdir
+				x 进入	     cd
+			修改文件权限:
+				chmod u+r [file_path]
+				chmod a+w [file_path] user/group/other都添加写权限
+				推荐8进制修改:
+				
+
+
+		硬链接/软链接(符号链接)
+			硬链接: ln [src_path] [dest_path]  就是同一个文件两个名字 inode相同
+			符号链接: ln -s [src_path] [dest_path] 相当于快捷方式
+
+		用户管理：
+			sudo cmd
+				使得在执行cmd期间切换身份为root
+				如果sudo 失败:  /etc/sudoers文件找到
+						root	ALL=(ALL) 	ALL
+						username	ALL=(ALL) 	ALL #添加的
+				
+			用户创建:
+				sudo useradd [username]
+			创建密码：
+				sudo passwd [username]
+			切换用户:
+				su - [username]
+			删除用户:
+				userdel -r [username]
+			组创建:
+				groupadd [groupname]
+			组删除:
+				groupdel [groupname]
+			向组内添加新成员:
+				gpasswd -a [username] [groupname]
+			从组内移除成员：
+				gpasswd -d [username] [groupname]
+		文件大小:
+			文件的大小！=占用磁盘空间大小(du -sh)
+		文件时间:
+			access time(atime)
+			change time(ctime)	文件内容改变(ls -l)
+			modify time(mtime)	文件属性
+		修改文件的拥有者和所属组:
+			chown username:group file
+	8.常用命令
+		wc [options] [file_path]
+			opts: -w(words) -l(lines) -c(charactor)
+		| 管道符
+		grep 过滤文件
+			grep [options] [keys] [file_path]
+				opts: 
+					-w 精确
+					-i 忽略大小写
+					-v 反向
+					-n 显示行号	
+	9.查找
+		可执行文件
+			which / whereis
+		普通文件
+			locate 
+			find [path] [way] [pattern]
+				way:
+					-name 按名字
+					-type 按类型 (f/d/s/c/p/b/l)
+					-size 按大小 (k/M/G)
+
+			find . -name "haha" -exec / -ok rm {} \;
+			-exec 执行后续命令 {}查找结果
+			-ok 执行期间会询问
+
+	10.文件的打包/压缩/解压缩
+		tar [options] [name] [file.....]
+			opts:
+				-c 创建
+				-x 解压并解包
+				-v 过程可视化
+				-f 后包名
+				-z 压缩gz格式
+				-j 压缩bz2格式
+				-t 查看压缩包中的文件
+			
+
+	11.vim基本使用
+		一般模式(默认)
+			切到插入模式:
+				i 光标所在字符前
+				I 行首
+				a 字符后
+				A 行末
+				o 下一行
+				O 上一行
+			基本使用:
+				复制: yy / 5yy（复制5行）
+				粘贴: p(下) / P（上）
+				剪切: dd / 5dd
+				撤销: u
+				还原: Ctrl+r
+				首行: gg
+				末行: G  （5G 第5行）
+				替换: r(只替换一次)  / R(替换模式,推出替换Esc)
+				块操作: Ctrl + v 方向键选择操作块						
+
+		插入模式
+			切到一般模式: Esc / Ctrl+c
+
+		命令行模式
+			一般模式切到此模式:  ":"
+				保存 :w   
+				退出 :q
+				强制 :wq!
+				多文件保存 :all
+				保存退出 :wq   :x
+				分屏 :sp newfile_path  :vsp newfile_path (ctrl+w+w多屏切换)
+				替换 :%s/old/new/g
+				:set mouse 设置鼠标在文件可用
+				:set ts=4  设置Tab为4个空格
+				:set number 显示行号
+				:3 line3第三行 
+
+	
+软件包管理
+	rpm格式
+		yum源：
+			/etc/yum.repos.d/xx.repo
+			aliyun源
+			尚观yum源：ftp://172.16.8.100
+
+			本地yum源
+				baseurl=file:///mnt/cdrom/
+				enable=1
+				gpgcheck=0
+
+		yum软件包管理:
+			yum list 列出所有yum源对应的软件包
+			yum repolist 统计软件包个数
+			yum install 包名(git, gcc, vim) 安装
+			yum remove/erase 包名
+			yum update 更新
+			yum upgrade 升级
+	
+
+版本控制(git)
+	官网github申请帐号
+	创建仓库
+	生成公钥:
+		在家目录中执行ssh-keygen后，在家目录中生成.ssh目录
+		将.ssh/xxx.pub全部内容复制
+
+	git基本使用
+		git clone 仓库地址
+		git add . 将工作区文件添加到仓库的暂存区
+		git commit -m "描述" 将仓库暂存区提交到git分支
+		git push 将分支中的修改推到远程仓库
+		
+		git pull 同步远程仓库
+
+		git log 显示过去所有版本信息
+		git reset --hard HEAD^ 退回上一个版本 HEAD~100退回前100个版本
+		git reflog 显示文件过去和未来的所有版本
+		git reset --hard 版本号 文件更新到指定版本
+
+
+
+
+网络管理
+
+
+	
