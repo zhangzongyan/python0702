@@ -1,0 +1,31 @@
+创建pyenv虚拟环境
+
+sudo yum install openssl*   安装其所需要的库文件
+
+git clone https://github.com/yyuu/pyenv.git ~/.pyenv 		下载pyenv
+
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile		
+
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+
+echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+
+exec $SHELL		重启终端运行的程序(shell)
+
+source ~/.bash_profile	重新加载配置文件.bash_profile
+
+pyenv  install --list	列出所有我们可以通过pyenv安装的python版本
+
+pyenv install -v 3.6.4	用pyenv命令安装python3.6.4
+
+pyenv versions	查看当前系统中所有的python版本
+
+pyenv version	查看当前所使用的版本
+
+pyenv global 3.6.4	将使用版本切换到3.6.4
+
+pyenv version
+
+python
+
+如果成功了 重启计算机
