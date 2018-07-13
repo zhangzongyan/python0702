@@ -1,0 +1,13 @@
+1.下载搜狗输入法的rpm包，可以去上面那个链接下载，我也保存了一份（pan.baidu.com/s/1c0yR6Ac）。
+2.加入epel源，执行yum list  *epel*后发现一个epel-release.noarch。再用yum安装就好了。
+3.加入mosquito-myrepo源
+mosquito-myrepo是一个私人制作的第三方源，其中包含了fcitx输入法以及基于fcitx的搜狗输入法。
+获取root权限后执行
+yum-config-manager --add-repo=https://copr.fedoraproject.org/coprs/mosquito/myrepo/repo/epel-7/mosquito-myrepo-epel-7.repo
+4.然后切换到搜狗输入法安装包所在目录，以root权限执行rpm -ivh 安装包名称。这个时候会出现需要安装哪些依赖。幸运的是加入前面两个源后，这些依赖都可以用yum安装了。先用yum查找每个依赖的安装包名称，在用yum安装。
+5.再次执行命令安装那个软件包就OK了。
+6.配置：
+首先关闭gnome-shell 对键盘的监听，然后切换输入法为fcitx:
+$ gsettings set org.gnome.settings-daemon.plugins.keyboard active false 
+$ imsettings-switch fcitx
+7.最后最好再重启一下系统，用shift就可以切换出搜狗输入法了。
