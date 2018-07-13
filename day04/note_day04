@@ -1,0 +1,55 @@
+
+主要内容:
+	python历史
+	
+小体验:
+	输出:
+		print()	
+	输入:
+		字符串=input("提示")
+		int(input())--->将输入的内容转换为整型
+		eval(input())--->转换为合适类型
+	控制语句:
+		if condition:
+			statement
+		else:
+			statement
+
+		if cond1:
+			xxx
+		elif cond2:
+			xxx
+		else:
+			xxx
+	循环:
+		while cond:
+			xxx
+			xxx
+		
+		break终止循环
+
+
+基本数据类型：
+	数字类型: 整型、浮点、复数
+		运算符:+ - * / % // ** - +  
+		函数:abs() 
+		整型数 op 浮点数 = 浮点数
+	字符串: 'hh"h"'  "he'l'lo" '''换行'''
+		运算符:+拼接  string*n倍数 in not in
+		切片:[start=0:end=len(string):step=1] 索引:正向0递增，逆向-1递减
+		函数:s.swapcase() 大写转小写，小写转大写
+			s.upper() 转大写
+			s.lower() 转小写
+			s.isupper()
+			s.islower()
+			s.isdigit()
+			s.split(seq=' ') 切割
+			s.index(sub) sub在s中第一次出现的首字符的索引
+			s.find(sub)
+			s.count(sub) sub在count中出现的次数
+			s.format() 格式化字符串
+
+
+
+
+
