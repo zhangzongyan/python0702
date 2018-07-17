@@ -1,0 +1,54 @@
+
+知识回顾:
+	控制语句
+		if condtion:
+			statement1
+			statement2
+		condtion非0即真
+		
+		if cond:
+			state1
+		else:
+			stat
+
+		statement1 if cond1 else statement2
+
+		if cond1:
+			statement1
+		elif cond2:
+			....
+		elif cond3:
+			....
+		else:
+			....
+
+	循环语句
+		循环遍历初始化
+		while cond:
+			statement
+			循环遍历变化
+		else:
+			xxxx	# 非break终止循环
+
+		死循环
+		while True:
+			statement
+
+
+		for i in string:
+			i  # 每取到字符串string中的一个字符，则循环一次
+		else:
+			xxxx
+
+		for i in range(0, len(string)):
+			s[i]
+		range(arg) 序列 0<= i < arg
+		range(start, end) start <= i < end
+		range(start, end, step=1) i = start; i < end; i += step
+
+		循环中两个关键字:
+			break 终止最近循环
+			continue 终止最近循环的本次循环，继续下一次
+
+
+
