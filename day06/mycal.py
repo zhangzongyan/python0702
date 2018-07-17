@@ -3,9 +3,17 @@
 '''
 
 # 读入用户输入的年月(y, m)
-m, y = eval(input("请输入1990年后的任意年月(月, 年):"))
-sumdays = 0
+while True:
+	try:
+		m, y = eval(input("请输入1990年后的任意年月(月, 年):"))
+		if not(1<= m <= 12 and y >= 1990):
+			raise Exception #抛出异常 
+	except Exception:
+		print("请重新输入")
+	else:
+		break
 
+sumdays = 0
 # 1990.1.1~y/m/1有多少天 == 1990.1.1 ~ y-1.12.31 + y.1.1~y.m.1
 for i in range(1990, y):
 	if (i % 4 == 0 and i % 100 != 0) or (i % 400 == 0):
