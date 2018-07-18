@@ -1,0 +1,36 @@
+
+回顾:
+	强化循环使用（循环的嵌套）
+
+	异常处理:
+		try:	
+			语句		
+		except Exception as e:
+			print(e)
+
+		try:
+			xxxx
+		except 异常1:
+			xxxx
+		except 异常2:
+			xxxx
+		else:
+			无异常		
+		finally:
+			无论是否发生异常都会执行
+
+		raise 异常类 #用户抛出异常
+
+	常用模块(库):
+		本质.py文件
+		math
+		random
+		
+		导入：import 库名
+
+			  库名.函数名()
+	
+			  from 库名 import *
+			  函数名()
+
+
