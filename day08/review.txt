@@ -1,0 +1,63 @@
+
+知识回顾:
+	python的类型分类:
+		数值类型：
+			整型
+			浮点
+			复数	
+		序列类型(索引，切片)：
+			字符串
+			列表--->可变
+			元祖
+		集合类型:
+			集合
+		映射类型:
+			字典
+
+	列表:打了激素的数组
+		列表中可以存储任意数据类型
+		定义:
+			l = [成员]		
+		索引/切片:
+			0 <= index <= len(l)
+			l[index]
+			l[start_index:end_index]
+			l[start_index:end_index:step=1]
+			
+			l[start_index:end_index] = [] #删除列表元素，从索引start_index开始到end_index为止
+			del l[start_index:end_index] 
+
+			l[start_index:start_index] = [1,2,3] 向列表索引为start_index元素之前插入[1,2,3]
+		遍历:
+			for i in range(len(l)):
+				l[i]
+			for i in l:
+				i
+		运算符:
+			in
+			not in
+			+
+			*
+			=
+		常用函数:
+			max()
+			min()
+			l.index()
+			l.count()	
+			sorted(l, reverse=False) #返回值是一个有序列表
+			l.sort(reverse=False) #使l有序
+			l.insert(index, new_element)
+			l.append(elm)
+			l.pop(index=-1)
+			l.remove(elm)
+	
+		列表作为函数默认形参：
+			如果未给默认参数复制，多次调用使用的是同一个列表	
+
+		列表生成式:
+			[exp for x in xxx]
+
+
+
+
+
