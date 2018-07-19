@@ -18,6 +18,15 @@ print(ls[1:4])
 print(ls[::2])
 print(ls[::-1])
 
+# 切片插入新的元素
+ls[1:1] = [1,4,77,88]
+print("ls[1:1] = [1,4,77,88]:",ls)
+
+# 切片删除列表中的指定元素
+ls[2:5] = []
+print(ls)
+
+
 # 遍历
 length = len(ls)
 for i in range(length):
@@ -46,7 +55,9 @@ print(newls.index("hi", 3, -1))
 
 print(newls.count("hi"))
 
-
+# 将range类型转换为列表
+l = list(range(1, 101, 2))
+print(l)
 
 
 
