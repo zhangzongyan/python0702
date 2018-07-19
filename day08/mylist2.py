@@ -56,4 +56,6 @@ print(ls)
 ls = sorted(ls, reverse=True)
 print(ls)
 
+ls.sort()
+print(ls)
 
