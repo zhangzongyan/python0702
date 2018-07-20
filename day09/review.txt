@@ -1,0 +1,129 @@
+
+周回顾:
+
+1.python基本数据类型:(动态)
+	数值类型：
+		整型:int()
+		浮点:float()
+		复数
+			常用运算符: + - * / // % ** (+) (-) > < >= <= != == = not and or
+	布尔类型:
+			True
+			False
+	None 空类型 不能参与运算
+	组合类型:
+		序列类型:
+			字符串:不可变，可哈希
+					'xxxx' "xx" '''xxx'''
+					s.split() s.center(10, '-') "{2:#>10.2f}{0}{1}".format(a, b, c)
+					s.upper() s.lower() s.isupper() s.islower() s.isdigit()
+					s.alpha() s.index() s.find()...
+					import string
+					string.ascii_letters 所有字母组成字符串
+					string.ascii_uppercase
+					string.digits
+				
+			列表: list() [] 可变
+					l[1:1] = [1,2,3]  插入
+					l[2:5] = [] 删除
+					l.append() l.insert(index, elm) l.pop(index) l.remove(elm) l.clear()
+					列表作为函数的默认参数时，多次调用此函数，使用默认参数值，用的是同一个列表
+					列表生成式:
+						[2**i for i in range(11)]
+				
+			元祖: tuple() 不可变,可哈希
+				共同的运算符,函数:
+					in
+					not in
+					+
+					*n
+					[start_index:end_index:step] 切片
+					max()
+					min()
+					index()
+					count()
+					len()
+				
+		集合:set()  可变，非哈希 集合中的元素都要求可哈希
+				所有元素不能重复
+			
+		映射类型:
+			字典:dict()
+				key独一无二的，可哈希
+				k.keys()
+				k.values()
+				k.items()
+
+常用模块(.py)
+	python内置模块
+		turtle
+		random
+		string
+		datetime
+		time
+		math
+	第三方模块
+		jieba	
+
+控制语句
+	if 
+	if .... else....
+	if ...elif....elif....else..
+	exp if cond else exp2	
+循环:
+	for i in range():
+		pass
+	for i in str/list/tuple/dict/set:
+		pass
+
+	i = 0
+	while i < xx:
+		xxxx
+		i += 1 # i-= 1
+	else:
+		pass
+
+	关键字:
+		break 终止循环
+		continue 终止本次，继续下一次
+
+异常处理:
+	try:
+		有可能会异常	
+	except 异常类型 as e:
+		xxxx
+		e 当前异常的异常信息
+	except 异常类型1,异常类型2：
+		xxxx
+	else:
+		无异常
+	finally:
+		无论如何都执行
+
+	raise 异常类型 #抛出异常
+
+函数:
+	def 函数名(参数列表):
+		执行体
+		return 返回值列表
+
+	调用:
+		函数名(参数)
+	特殊:
+		匿名函数: f = lambda 参数1,参数:返回值
+		递归(了解)
+	参数:
+		固定/位置参数
+		默认参数:最后
+		可变参数
+		关键字参数
+		
+
+
+
+
+
+
+
+
+
