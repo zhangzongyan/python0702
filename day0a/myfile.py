@@ -3,6 +3,7 @@
 # 默认打开方式是“rt“ , ("r" "r+")不创建 "w" "w+" "a" "a+" "b" "t"
 # "w" / "w+"打开一个文件如果文件不存在创建，如果存在将文件截短为0
 fd = open("test", "w+")# "wt+"
+print(fd.fileno()) # 获取文件的文件描述符
 
 #print(fd.read())
 fd.write("hello   \nworld\n")
@@ -19,5 +20,7 @@ fd.close()
 
 # 不需要关闭
 with open("test", "a") as f:
+	print(f.fileno())
 	print(f.tell())
+
 

@@ -1,0 +1,48 @@
+
+文件操作
+	open(路径, 打开方式)
+		打开方式:
+			r 不创建文件
+			w
+			a
+			+ / b / t	
+	read() / readline() / readlines() / for i in file_stream:	
+	write() / wrtielines()
+	seek(偏移字节个数，位置)
+		位置: 0 or SEEK_SET (默认，文本只允许操作文件开头)
+			  1 or SEEK_CUR
+			  2 or SEEK_END
+	tell()
+	flush()
+		sys.stdout.flush() 刷新标准输出缓存区
+	close()
+		必要的
+
+
+	sys模块
+		sys.argv --->命令行参数
+		sys.stdout--->标准输出流
+		sys.exit()---->终止进程
+		
+目录:
+	os	
+	os.getcwd()--->当前工作目录	
+	os.chdir()
+	os.listdir()--->获取给定路径下所有文件
+	os.stat()--->获取文件属性
+	os.path模块
+		os.path.exits()
+		os.path.isfile()
+		os.path.isdir()
+		os.path.join()
+		os.path.split()
+
+
+
+
+
+
+
+
+
+
