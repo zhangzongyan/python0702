@@ -1,4 +1,3 @@
-
 import sys
 
 def add2num(num1, num2):
