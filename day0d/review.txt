@@ -1,0 +1,36 @@
+
+知识回顾:
+	
+	面向对象
+		
+	类
+		class Person:
+			pass
+	对象
+		p1 = Person()
+	实例化
+
+	属性
+		类属性
+			Person.xx
+			p1.xxx (没有xxx的实例属性) 不推荐
+		实例属性(对象)
+			p1.xxxx
+		私有属性
+			__name
+			外部访问:_Person__name
+	方法
+		描述对象行为的
+
+	构造方法
+		__init__()
+		
+	析构方法
+		__del__()
+
+	封装
+	继承	
+		class A(B):
+
+	多态
+
