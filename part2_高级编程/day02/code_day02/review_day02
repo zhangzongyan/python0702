@@ -1,0 +1,54 @@
+并发:
+    多进程（主要）
+    多线程（不推荐）
+
+    进程间通信:
+        共享内存
+            m = multiprocessing.Manager()
+            m.dict() 共享字典
+            m.list() 共享列表
+
+        消息队列(重点)
+            q = multiprocessing.Queue()
+            q.put()
+            q.get()
+
+        管道
+            conn1, conn2 = multiprocessing.Pipe()
+
+            conn1.send()
+            conn2.recv()
+    分布式进程：
+        分布在多台主机
+        server.py
+            <1>构建多台主机上的进程数据交换的机制
+                q = multiprocessing.Queue()
+            <2>队列注册到网络
+                def return_q():
+                    return q
+
+                multiprocessing.managers.BaseManager.register('get_q', callable=return_q)
+            <3>创建manager对象，绑定地址
+                manager = multiprocessing.managers.BaseManager(address=(ip, port), authkey=b'')
+            <4>active manager对象
+                manager.start()
+            <5>获取网络队列
+                net_que = manager.get_q()
+            <6>使用队列
+
+    进程池(重点):
+        pool = multiprocessing.Pool(numbers)
+
+        # 异步添加进程
+        pool.apply_async(target, args, callback)
+
+        pool.close()
+        pool.join()
+
+    多线程（只能分布在一个cpu）
+        假并发
+        threading.Thread()
+
+
+
+

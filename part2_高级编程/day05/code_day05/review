@@ -1,0 +1,53 @@
+
+知识回顾:
+    数据库：
+        关系数据库
+            sqlite3 mysql
+        非关系数据库
+            MangoDb
+
+    sqlite3是python内置：
+       轻量级，嵌入式数据库，跨平台，桌面/应用程序
+    mysql
+        Web服务(高并发)
+
+    数据库遵守DB-API
+    SQL语句:
+        1.创建表
+            create table 表名(字段1....)
+        2.删除表
+            drop table 表名
+        3.插入
+            insert into 表名(字段) values(值)
+        4.更改
+            update 表名 set 字段=新值 where 字段=旧值
+        5.删除
+            delete from 表名
+        6.查询
+            select * from 表名
+            1.关系运算符(= != > < )
+            select * from 表名 where age > 18
+            2.逻辑运算符(and or not)
+            select * from 表名 where age > 18 and name="xxx"
+            3.范围运算符(between...and  not between... and)
+            select * from 表名 where age between 18 and 25
+            4.判断(in  not in)
+            select * from 表名 where city in ('上海', '北京')
+            5.模糊匹配(%所有 中文%% 单个_)
+            select * from 表名 where name like "张%%"
+
+    import sqlite3
+
+        1.连接数据库
+            conn = sqlite3.connect(path)
+        2.建立游标
+            c = conn.cursor()
+        3.执行sql语句
+            c.execute(sqlstring)
+            c.executemany()
+        4.关闭游标
+            c.close()
+        5.提交修改
+            conn.commit()
+        6.关闭数据库
+            conn.close()

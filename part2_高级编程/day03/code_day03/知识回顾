@@ -1,0 +1,64 @@
+
+网络编程:
+    不在同一台主机上的两个进程实现数据交换--->约定协议
+    TCP/IP网络模型:
+        应用层 (FTP, HTTP)
+        传输层 (TCP, UDP)
+        网络层 (IP)
+        链路层 (ARP, RARP)
+
+    OSI七层网络模型
+        应用层
+        表示层
+        会话层
+        传输层 (TCP, UDP)
+        网络层 (IP)
+        链路层 (ARP, RARP)
+        物理层
+
+    ipv4地址族：
+        32位 == 网络号+主机号
+        子网掩码：1网络号   0主机号
+            网络号         主机号         ip                                  内网
+        A   1(0开头)         3          0.0.0.0-127.255.255.255       10.0.0.0--10.255.255.255
+        B   2(10开头)        2          128.0.0.0-191.255.255.255     172.16.0.0--172.31.255.255
+        C   3(110开头)       1          192.0.0.0-223.255.255.255     192.168.0.0--192.168.255.255
+        D   4(1110开头)                 224.0.0.0-239.255.255.255
+        E   保留
+
+    端口：
+        进程
+        0~1024 周知端口
+        1024~65535 用户端口
+
+    socket套接字
+        socket模块
+
+        1.流式套接字(TCP)
+            基于连接的，可靠的，有序的
+            服务端                                         客户端
+            (先运行)
+            s=socket(family=AF_INET, type=SOCK_STREAM)    socket()
+            s.bind((ip, port))                            .connect()
+            s.listen()                                    s.send() / s.recv()
+            s.accept()                                    close()
+            s.send() / s.recv()
+            s.close()
+
+        2.报式套接字(UDP)
+            无连接，不可靠
+            服务器                                         客户端
+            s=socket(family=AF_INET, type=SOCK_DGRAM)     .socket()
+            s.bind()                                      .sendto() / .recvfrom()
+            s.sendto() / s.recvfrom()                     .close()
+            s.close()
+
+    socketserver模块
+        同时处理多个连接请求
+        class Myserver(socketserver.BaseRequestHandler):
+            def handle(self):
+                服务器数据收发的
+
+        def main():
+            s=socketserver.ThreadingTCPServer((ip, port), Myserver)
+            s.server_forever()

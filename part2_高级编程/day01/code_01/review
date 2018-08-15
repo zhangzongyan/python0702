@@ -1,0 +1,62 @@
+
+
+知识回顾:
+    并发:
+        多进程
+        多线程
+        多进程+多线程
+    进程:
+        进程创建
+            os模块中进程创建只能在Unix os运行
+            pid = os.fork()
+            if pid == 0:
+                # 子进程
+            if pid > 0:
+                # 父进程
+
+            父进程等待子进程完成:
+                os.wait()
+            进程终止:
+                sys.exit(status)
+            新的进程替换调用进程:
+                os.execl()
+
+            跨平台创建进程
+                multiprocessing
+                p = .Process(target=子进程运行函数, args=(参数,))
+                p.start() 子进程运行
+                p.join() 收尸
+
+            进程类:
+                class Process():
+                    def __init__(self, target=None, args=None):
+                        self.target = target
+                        self.args = args
+                    def run(self):
+                        self.target(self.args)
+                        ......
+
+                class Child(Process):
+                    def __init__(self):
+                        super().__init__()
+                        xxxx
+                    def run(self):
+                        子类行为
+                        xxxxx
+                        xxxxx
+
+            进程间通信:
+                共享内存
+                multiprocessing.Value()
+                m = multiprocessing.Manager()
+                m.dict()
+                m.list()
+
+                消息队列
+                    q = multiprocessing.Queue()
+
+                    # 发
+                    q.put()
+                    # 收
+                    q.get()---->block=True  timeout=None
+
