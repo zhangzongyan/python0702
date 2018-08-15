@@ -1,0 +1,99 @@
+											基本命令
+
+文件操作
+	linux命令格式:
+		cmd [options] [para]
+	1.man手册
+		man 1 man
+		man 1 ls
+	2.linux文件系统结构的特点
+		一切皆文件
+		从/开始的
+	3.cd --->change directory
+		cd [dir]
+			dir默认是家目录
+			dir有效路径
+			路径：相对路径:相对当前, "."当前 ".."上一级
+			      绝对路径:从/开始
+	4.pwd 打印当前工作路径
+	5.目录的增删改查：
+		增:
+			touch [filepath]
+			vim [filepath]
+			gedit [filepath]
+
+			添加新目录
+				mkdir [dirpath]
+		查:
+			ls [options] [dirpath]
+				options:
+					-l
+					-i
+					-d
+					-a
+
+		删:
+			rm [options] [filepath]
+				options:
+					-r 如果删除的是目录，则加上此选项
+	6.文件的增删改查
+		增:
+			当用户成功登陆，默认打开三个文件(0标准输入，1标准输出， 2标准错误输出)
+			写文件方式:
+				通过编辑器(gedit, vim)
+				文件的重定向: > 标准输出重定向   2> 标准错误输出重定向  <标准输入重定向
+					ls > newfile
+				追加: >>
+		复制:
+			cp [options] [src_path][dest_path]
+				-r :目录
+		剪切
+			mv [src_path] [dest_path]
+		查看	
+			cat [filepath] 将文件的全部内容显示到终端
+			head -10 [filepath] 显示文件的前十行
+			tail -2 [filepath] 显示文件的最后2行
+			less [filepath] 按屏显示文件
+
+	7.文件的属性
+		ls -l
+		-rw-rw-r--. 1 reala_zhang reala_zhang 1378 7月   9 16:23 linux基本命令
+		文件类型:
+			七种：
+				-/regular	普通文件
+				d/directory	目录文件
+				l/link	符号连接
+				s/socket	套接字
+				b/block	块设备
+				p/pipe	管道
+				c/charactor	字符设备
+			
+		文件的权限：
+			user(拥有者) group(所属组) other(其他用户)
+			非目录文件:
+				r(read)w(write)x(execute)
+			目录文件:
+				r 检索      ls
+				w 增/删/改  cp touch mkdir
+				x 进入	     cd
+			修改文件权限:
+				chmod u+r [file_path]
+				chmod a+w [file_path] user/group/other都添加写权限
+				推荐8进制修改:
+				
+
+
+		硬链接/软链接(符号链接)
+			硬链接: ln [src_path] [dest_path]  就是同一个文件两个名字 inode相同
+			符号链接: ln -s [src_path] [dest_path] 相当于快捷方式
+
+
+
+软件包管理
+
+版本控制(git)
+
+网络管理
+
+
+

@@ -1,0 +1,37 @@
+
+class Apple(object):
+    role = "apple"
+    def __init__(self, name):
+        self.name = name
+    # 实例方法
+    def set_apples(self, n):
+        print("object apples {}, object:{}".format(n, self))
+
+    # 类方法
+    @classmethod
+    def class_apples(cls, n):
+        print("class apples {}, class:{}".format(n, cls))
+        print(cls.role) # 类方法中不能获取到实例属性，但是可以获取类属性
+
+    @classmethod
+    def createApple(cls, nm="ap"):
+        print("new object")
+        return cls(nm)
+
+    # 静态方法
+    @staticmethod
+    def statid_apples(n):
+        print("apples {}".format(n))
+        # 不能访问类属性和实例属性
+
+ap = Apple("pp")
+ap.set_apples(10)
+# Apple.set_apples(5) 实例方法只能通过对象调用
+ap.class_apples(5)
+Apple.class_apples(100)
+
+ap.statid_apples(15)
+Apple.statid_apples(20)
+
+# 创建对象
+ap2 = Apple.createApple()

@@ -1,0 +1,113 @@
+
+tkinter GUI图形开发
+
+1.按钮
+    bnt = Button()
+    属性:
+        text = 按钮名字
+        height
+        width
+        command = 函数
+        bitmap
+    bnt['command'] = xxx
+    bnt.invoke = xxx
+2.单选框
+    Radiobutton()
+    属性:
+        text
+        image
+        command
+        variable(tkinter.IntVar tkinter.StringVar)
+                .get()  .set()
+        value = 1
+        bitmap
+    方法:
+        .deselect()
+        .select()
+        .invoke()
+3.复选框
+    Checkbutton()
+    属性:
+        text / image / command
+        onvalue
+        offvalue
+        variable
+        bitmap
+    方法:
+        .deselect()
+        .select()
+        .invoke()
+4.标签
+    Label()
+    属性:
+        text
+        textvariable
+        anchor
+5.单行输入框
+    Entry()
+    属性：
+        justify (tk.LEFT默认  tk.CENTER)
+        font
+        show (密码show="*")
+        xscrollcommand (水平滚动条)
+    方法:
+        .xveiw() --->滚动条
+        .get()
+        .index()
+        .insert()
+        .delete()
+6.多行输入框
+    Text()
+    属性:
+        state (禁用只读)
+        xscrollcommand
+        yscrollcommand
+    方法:
+        .insert()
+        .delete()
+        .get()
+        .xview()
+        .yview()
+8.框架
+    Frame() / LabelFrame() [labelanchor指明label位置]
+    容器
+    属性:
+        width
+        height
+9.菜单
+    Menu()
+    方法:
+        .add_command()
+        .add_cascade() 下拉菜单
+10.列表框
+    Listbox()
+    属性:
+        xscrollcommand
+        yscrollcommand
+    方法:
+        .insert()
+        .delete()
+        .size()
+        .xview()
+        .yview()
+11.画布
+    Canvas()
+    属性:
+        xscrollcommand
+        yscrollcommand
+    方法:
+        .create_bitmap()
+        .create_image()
+        .create_line()
+12.事件
+    所有组件都可绑定事件
+        鼠标
+            <Button-1>左键   <Button-2>滚轮   <Button-3>右键
+        键盘
+            <Return> Enter键
+            <'Key'> 按键
+        绑定:
+            bind(事件对象, 函数)
+            bind_all()
+13.
+    Toplevel()

@@ -1,0 +1,210 @@
+    1  passwd
+    2  sudo passwd reala_zhang
+    3  vim /etc/sudoers.d/
+    4  vim /etc/sudoers
+    5  sudo vim /etc/sudoers
+    6  ls
+    7  ifconfig 
+    8  sudo dhclient
+    9  ifconfig 
+   10  cd /etc/yum.repos.d/
+   11  ls
+   12  wget  http://mirrors.aliyun.com/repo/Centos-7.repo
+   13  sudo wget  http://mirrors.aliyun.com/repo/Centos-7.repo
+   14  yum repolist
+   15  ping 172.16.8.100
+   16  yum install lftp
+   17  sudo yum install lftp
+   18  sudo kill 14354
+   19  sudo yum install lftp
+   20  fasdfkajlsdfkjsdk
+   21  ls /mnt/
+   22  ls
+   23  cd
+   24  useradd uplooking
+   25  sudo useradd uplooking
+   26  whoami
+   27  su uplooking
+   28  sudo passwd uplooking
+   29  su uplooking
+   30  tail /etc/passwd
+   31  man 5 /etc/passwd
+   32  man 5 passwd
+   33  man 1 useradd
+   34  man useradd
+   35  passwd
+   36  pwd
+   37  su - uplooking
+   38  sudo userdel -r uplooking
+   39  tail -2 /etc/passwd
+   40  ls /home/
+   41  ls
+   42  sudo vim /etc/passwd
+   43  cd
+   44  pwd
+   45  ls
+   46  cd /
+   47  ls
+   48  ls /home/
+   49  cd
+   50  pwd
+   51  vim /etc/passwd
+   52  exit
+   53  cd
+   54  pwd
+   55  source /etc/passwd
+   56  sudo source /etc/passwd
+   57  cd
+   58  pwd
+   59  sudo vim /etc/passwd
+   60  ls
+   61  cat /etc/group
+   62  sudo useradd a
+   63  sudo passwd a
+   64  sudo useradd b
+   65  sudo passwd b
+   66  cat /etc/group
+   67  id a
+   68  man gpasswd
+   69  gpasswd -a b a
+   70  sudo gpasswd -a b a
+   71  cat /etc/group
+   72  sudo su - a
+   73  sudo vim /etc/sudoers
+   74  gedit /etc/sudoers
+   75  sudo gedit /etc/sudoers
+   76  sudo mv /home/a/newfile /home/b/
+   77  su - b
+   78  sudo userdel -r a b
+   79  sudo userdel -r a
+   80  sudo userdel -r b
+   81  groupdel a
+   82  sudo groupdel a
+   83  su root
+   84  ls
+   85  rm 
+   86  rm \
+   87  ls
+   88  ls -l
+   89  ls -lh
+   90  du -sh
+   91  du -sha
+   92  du -sh /
+   93  du -sh /home/reala_zhang/
+   94  du -sh /etc/passwd
+   95  ls -lh /etc/passwd
+   96  stat /etc/passwd
+   97  ls
+   98  touch empty
+   99  stat empty
+  100  ll empty
+  101  stat empty
+  102  chmod 444 empty
+  103  stat empty
+  104  cat empty
+  105  stat empty
+  106  chmod 644 empty
+  107  stat empty
+  108  echo "good morning" > empty
+  109  stat empty
+  110  ls -l
+  111  chmod 664 empty
+  112  ls -l
+  113  ls
+  114  ll
+  115  sudo rm 
+  116  sudo rm \
+  117  sudo rm \\
+  118  ls
+  119  ll
+  120  chown root: empty
+  121  chown root:root empty
+  122  cat /etc/passwd
+  123  ls
+  124  sudo chown root:root empty
+  125  ll
+  126  sudo chown reala_zhang: empty
+  127  ll
+  128  sudo chown :root empty
+  129  ll
+  130  sudo chown reala_zhang empty
+  131  ll
+  132  ls
+  133  wc /etc/passwd
+  134  wc -l /etc/passwd
+  135  wc -w /etc/passwd
+  136  wc -c /etc/passwd
+  137  head -12 /etc/passwd
+  138  head -12 /etc/passwd | tail -4
+  139  cat /etc/passwd
+  140  cat /etc/passwd | grep "root"
+  141  cat /etc/passwd | grep -n "root"
+  142  man grep
+  143  ls
+  144  vim newfile 
+  145  grep  "hello" newfile 
+  146  grep -w "hello" newfile 
+  147  grep -w -i "hello" newfile 
+  148  grep -w -i -v "hello" newfile 
+  149  grep -w -i -v -n "hello" newfile 
+  150  which grep
+  151  whereis grep
+  152  locate passwd
+  153  ls
+  154  touch passwd
+  155  locate passwd
+  156  pwd
+  157  ls
+  158  find /etc -name "passwd"
+  159  find /usr -name "list.h"
+  160  find /etc -name "c*"
+  161  find /etc -name "*y"
+  162  find /dev -type b
+  163  ls -l /dev/dm-1
+  164  find /dev -type c
+  165  find /dev -type d
+  166  find /dev -type d | wc -l
+  167  find /etc -size 2k
+  168  find /etc -size 10k
+  169  ll -h /etc/sysconfig/network-scripts/ifup-ib
+  170  ll -h /etc/brltty/is.ttb
+  171  find /etc -size +10k
+  172  ll -h /etc/brltty/de.ttb
+  173  man find
+  174  find . -name "pwd_d"
+  175  find . -name "pwd_d" -exec mv {} afternoon \;
+  176  ls
+  177  find . -name "passwd" -ok rm {} \;
+  178  ls
+  179  tar -cvf test.tar afternoon empty emptydir/ newfile  pwd_s yum.repos.d/
+  180  tar -cf test2.tar afternoon empty emptydir/ newfile  pwd_s yum.repos.d/
+  181  ls
+  182  file test.tar 
+  183  ls
+  184  mv test.tar emptydir/
+  185  ls
+  186  cd emptydir/
+  187  ls
+  188  tar -xvf test.tar 
+  189  ls
+  190  tar -czvf haha.tar.gz *
+  191  ls
+  192  file haha.tar.gz 
+  193  ls
+  194  rm aa afternoon  empty emptydir ff newfile  pwd_s test.tar yum.repos.d/ -rf
+  195  ls
+  196  tar -xvf haha.tar.gz 
+  197  ls
+  198  tar -cZvf haha.tar.gz *
+  199  ls
+  200  file haha.tar.gz 
+  201  rm * 
+  202  rm *  -r
+  203  ls
+  204  tar -cjvf other.tar.bz2 /etc/passwd /etc/group /usr/include/
+  205  ls
+  206  file other.tar.bz2 
+  207  ls
+  208  tar -tf other.tar.bz2 
+  209  ls
+  210  history > history
