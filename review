@@ -1,0 +1,37 @@
+
+回顾:
+    多态(鸭子类型)
+    面向对象的高级特性:
+        1.限制类中实例属性
+            __slots__ = ()
+        2.装饰器:在不修改函数实现的基础上，添加功能
+            import functools
+            def decorator(fun):
+                @ functools.wraps(fun) # wrapper.__name__ = fun.__name__
+                def wrapper(*args, **kargs):
+                    # 装饰
+                    xxx
+                    return fun(*args, **kargs)
+                return wrapper
+
+            @decorator # fun = decorator(fun)
+            def fun():
+                pass
+            fun()
+            fun.__name__
+
+            @property
+            def score(self):
+                return self.xxx
+            @score.setter
+            def score(self, value):
+                self.xxx = value
+            obj.score = value # obj.score()
+
+        3.魔法方法
+            __init__   创建对象自动调用
+            __del__    对象销毁自动调用
+            __len__    len(obj)
+            __str__    print(obj)
+            __iter__ / __next__  for x in obj:
+            __getitem__(self, n) obj[index] obj[start:end]
